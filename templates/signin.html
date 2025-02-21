@@ -1,0 +1,147 @@
+{% load static %}
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection of Cyber attack in Digital Forensics by using Machine Learning and Django Framework</title>
+    <style>
+        body{
+        background-image: url("{%static 'images/1.jpg' %}");
+        background-size: cover;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: purple;
+            font-size: 25px;
+            letter-spacing: 1px;
+         }
+         li{
+            float: right;
+         }
+         li a{
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+         }
+         li a:hover{
+            background-color: purple;
+         }
+        li a:active{
+            background-color: rgb(20, 48, 204);
+         }
+         #frm
+         {
+            font-size: 25px;
+            text-align: center;
+            font-weight: bold;
+            color:#a72465;
+            background-color: lightorange;
+            padding: 38px 24px;
+            margin: 8px 0;
+            border-radius: 0px;
+            letter-spacing: 1px;
+            font-family: Cambria;
+         }
+         input[type=text],input[type=email],input[type=number],input[type=password]
+         {
+            background-color: #0ed5ae;
+            color:#000000;
+            outline: none;
+            padding-top: -1%;
+            padding-bottom: 0%;
+            width: 40%;
+            height: 0%
+            border: none;
+            margin: 21px 0;
+            border-bottom: 4px solid #purple;
+            font-weight:bold;
+            font-size: 20px;
+            text-align: center;
+            font-style: italic;
+            font-family: Cambria;
+         }
+         input[type=submit]
+         {
+            margin-top: 1%;
+            width: 15%;
+            height: 5%;
+            border: none;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #000000;
+            background-color: rgb(190 48 141);
+            font-weight: bold;
+         }
+         input[type=button]
+         {
+            margin-top: 1%;
+            width: 15%;
+            height: 5%;
+            border: none;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #000000;
+            background-color: rgb(190 48 141);
+            font-weight: bold;
+         }
+         input[type=submit]:hover
+         {
+            background-color: rgb(131, 39, 168);
+         }
+         mess{
+            text-align: center;
+            font-weight: bold;
+            color: red;
+            font-size:35px;
+            text-shadow: 4px 2px 5px red;
+         }
+         input[type=button]:hover
+         {
+            background-color: rgb(131, 39, 168);
+         }
+    </style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="signup">Create an Account</a></li>
+    <li style="background-color: rgb(20, 48, 204);"><a class="active" href="signin">Sign In</a></li>
+    <li style="float:left"><a href="home"><tit><b><i>Cyber attack in Digital Forensics Prediction</i></b></tit></a></li>
+</ul>
+<mess>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</mess>
+<div id="frm">
+    <form action="signin" method="post">
+        {% csrf_token %}
+
+        <input type="text" id="username" name="username" placeholder="User Name" required><br>
+
+        <input type="text" id="password" name="password" placeholder="Password" required><br>
+
+        {% comment %} <input type="text" id="username" name="username" placeholder="User Name" required><br>
+
+        <input type="text" id="username" name="username" placeholder="User Name" required><br> {% endcomment %}
+        {% comment %} <label for ="username"> User Name:</label> {% endcomment %}
+        {% comment %} <input type="text" id="username" name="username" required><br> {% endcomment %}
+        {% comment %} <label for ="password"> Password: </label>
+        <input type="password" id="password" name="password" required><br> {% endcomment %}
+        
+        <input type="submit" value="Login">
+        <input type="button" id="btn" value="Forgot password">
+        <p>Don't have an account? <a href="signup">signup</a></p>
+    </form>
+</div>
+
+</body>
+</html>
